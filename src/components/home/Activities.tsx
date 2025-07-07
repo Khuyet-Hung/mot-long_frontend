@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, MapPin, Users, Image, Video, X, ChevronLeft, ChevronRight, ChevronsRight, ChevronsLeft } from 'lucide-react';
+import { Calendar, MapPin, Users, Image, Video, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { apiService } from '../../services/activitiesService';
 import { messageUtils } from '../../utils/messageUtils';
@@ -222,7 +222,7 @@ export const Activities: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {activities.map((activity, index) => (
+          {activities.map((activity) => (
             <motion.div 
               key={activity._id || activity.id} 
               variants={{

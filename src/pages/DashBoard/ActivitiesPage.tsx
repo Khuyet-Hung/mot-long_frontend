@@ -46,6 +46,7 @@ export default function Activities() {
         messageUtils.success("Xóa hoạt động thành công!");
         fetchActivities();
       } catch (error) {
+        console.log('🚀 ~ handleDeleteActivity ~ error:', error);
         messageUtils.error("Không thể xóa hoạt động. Vui lòng thử lại.");
       } finally {
         setIsDeleting(null); // Clear loading state

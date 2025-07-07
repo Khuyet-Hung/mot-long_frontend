@@ -1,7 +1,6 @@
 import React from 'react';
 import { Heart, Users, Target, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
-import FadeView from '../common/FadeView';
 
 export const Hero: React.FC = () => {
   return (

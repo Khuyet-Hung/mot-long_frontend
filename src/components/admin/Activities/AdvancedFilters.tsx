@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Search, Filter, X, CalendarDays, Users, SortAsc, SortDesc } from 'lucide-react';
+import { Search, X, CalendarDays, Users, SortAsc, SortDesc } from 'lucide-react';
 import type { FilterOptions, ActivitiesQueryParams } from '../../../types';
 
 interface AdvancedFiltersProps {
@@ -17,7 +17,7 @@ export const AdvancedFilters: React.FC<AdvancedFiltersProps> = ({
   onReset,
   className = '',
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded,] = useState(false);
   const [localFilters, setLocalFilters] = useState<ActivitiesQueryParams>(filters);
   const [searchKeyword, setSearchKeyword] = useState(filters.keyword || ''); // Local state for search input
 
