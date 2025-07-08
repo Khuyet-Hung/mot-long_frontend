@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Heart, Menu, X } from 'lucide-react';
 
 interface HeaderProps {
