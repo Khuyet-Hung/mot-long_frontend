@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashboardLayout />} >
+        <Route path="/management" element={<DashboardLayout />} >
           <Route path="" element={<HomeDashboard />} />
           <Route path="activities" element={<ActivitiesPage />} />
         </Route>
