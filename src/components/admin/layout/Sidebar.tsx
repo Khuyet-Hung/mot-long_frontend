@@ -22,12 +22,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
 
   // Hàm xác định tab dựa vào path
   function getActiveTabFromPath(pathname: string) {
-    if (pathname.startsWith('/management/activities')) return 'activities';
-    if (pathname.startsWith('/management/members')) return 'members';
-    if (pathname.startsWith('/management/reports')) return 'reports';
-    if (pathname.startsWith('/management/media')) return 'media';
-    if (pathname.startsWith('/management/settings')) return 'settings';
-    if (pathname === '/management' || pathname === '/management/') return 'management';
+    if (pathname.startsWith('/dashboard/activities')) return 'activities';
+    if (pathname.startsWith('/dashboard/members')) return 'members';
+    if (pathname.startsWith('/dashboard/reports')) return 'reports';
+    if (pathname.startsWith('/dashboard/media')) return 'media';
+    if (pathname.startsWith('/dashboard/settings')) return 'settings';
+    if (pathname === '/dashboard' || pathname === '/dashboard/') return 'dashboard';
     return '';
   }
 
@@ -40,12 +40,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
   }, [location.pathname]);
 
   const menuItems = [
-    { id: 'dashboard', label: 'Tổng quan', icon: Home , path: '/management'},
-    { id: 'activities', label: 'Quản lý hoạt động', icon: Calendar, path: '/management/activities' },
-    { id: 'members', label: 'Thành viên', icon: Users, path: '/management/members' },
-    { id: 'reports', label: 'Báo cáo', icon: BarChart3, path: '/management/reports' },
-    { id: 'media', label: 'Thư viện media', icon: FileText, path: '/management/media' },
-    { id: 'settings', label: 'Cài đặt', icon: Settings, path: '/management/settings' },
+    { id: 'dashboard', label: 'Tổng quan', icon: Home , path: '/dashboard'},
+    { id: 'activities', label: 'Quản lý hoạt động', icon: Calendar, path: '/dashboard/activities' },
+    { id: 'members', label: 'Thành viên', icon: Users, path: '/dashboard/members' },
+    { id: 'reports', label: 'Báo cáo', icon: BarChart3, path: '/dashboard/reports' },
+    { id: 'media', label: 'Thư viện media', icon: FileText, path: '/dashboard/media' },
+    { id: 'settings', label: 'Cài đặt', icon: Settings, path: '/dashboard/settings' },
   ];
 
   return (

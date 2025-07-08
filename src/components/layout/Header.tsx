@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => 
   // Xử lý nhấn giữ logo
   const handleLogoMouseDown = () => {
     holdTimeout.current = setTimeout(() => {
-      window.location.href = '/management';
+      window.location.href = '/dashboard';
     }, 3000);
   };
   const handleLogoMouseUp = () => {
