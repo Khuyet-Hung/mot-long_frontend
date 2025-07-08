@@ -7,7 +7,8 @@ import {
   BarChart3, 
   FileText, 
   Home,
-  X
+  X,
+  Undo
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -46,6 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onToggle }) => {
     { id: 'reports', label: 'Báo cáo', icon: BarChart3, path: '/dashboard/reports' },
     { id: 'media', label: 'Thư viện media', icon: FileText, path: '/dashboard/media' },
     { id: 'settings', label: 'Cài đặt', icon: Settings, path: '/dashboard/settings' },
+    { id: 'home', label: 'Trang chủ', icon: Undo, path: '/' },
   ];
 
   return (
