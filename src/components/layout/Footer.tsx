@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Heart, Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+
+  // Đếm số lần nhấn logo
+  const clickCount = useRef(0);
+  const clickTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleLogoClick = () => {
+    clickCount.current += 1;
+    if (clickTimeout.current) clearTimeout(clickTimeout.current);
+    clickTimeout.current = setTimeout(() => {
+      clickCount.current = 0;
+    }, 1000); // reset nếu không nhấn liên tiếp trong 1s
+    if (clickCount.current === 3) {
+      window.location.href = '/dashboard';
+      clickCount.current = 0;
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +75,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+        <div onClick={handleLogoClick} className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
             © 2025 Nhóm Tình Nguyện Viên. Tất cả quyền được bảo lưu.
           </p>

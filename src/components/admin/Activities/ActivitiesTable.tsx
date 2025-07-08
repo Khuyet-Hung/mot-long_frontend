@@ -84,11 +84,11 @@ export const ActivitiesTable: React.FC<ActivitiesTableProps> = ({
     <div className="bg-white rounded-lg shadow-lg">
       {/* Header */}
       <div className="p-6 border-b">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between sm:items-center mb-4 sm:flex-row flex-col gap-4 ">
           <h2 className="text-2xl font-bold text-gray-900">
             Quản lý hoạt động
           </h2>
-          <div className="flex gap-2">
+          <div className="flex gap-2 justify-end sm:justify-start">
             {/* Refresh Button */}
             {onRefresh && (
               <button

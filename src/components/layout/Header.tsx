@@ -15,22 +15,6 @@ export const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => 
     { label: 'Liên hệ', href: '#contact' }
   ];
 
-  // Thêm ref để lưu timeout
-  const holdTimeout = useRef<NodeJS.Timeout | null>(null);
-
-  // Xử lý nhấn giữ logo
-  const handleLogoMouseDown = () => {
-    holdTimeout.current = setTimeout(() => {
-      window.location.href = '/dashboard';
-    }, 3000);
-  };
-  const handleLogoMouseUp = () => {
-    if (holdTimeout.current) {
-      clearTimeout(holdTimeout.current);
-      holdTimeout.current = null;
-    }
-  };
-
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,11 +22,6 @@ export const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => 
           {/* Logo */}
           <div
             className="flex items-center space-x-2"
-            onMouseDown={handleLogoMouseDown}
-            onMouseUp={handleLogoMouseUp}
-            onMouseLeave={handleLogoMouseUp}
-            onTouchStart={handleLogoMouseDown}
-            onTouchEnd={handleLogoMouseUp}
           >
             <Heart className="h-8 w-8 text-red-500" />
             <span className="text-xl font-bold text-gray-800">Tình Nguyện Viên</span>
